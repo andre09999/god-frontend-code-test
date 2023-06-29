@@ -1,11 +1,16 @@
-import { HelloWorld } from "../src/components/HelloWorld";
+import { StyleProvider, ThemePicker } from 'vcc-ui';
+import {Blockcar} from '../src/components/index'
 import "../public/css/styles.css";
 import React from "react";
 
 function HomePage() {
   return (
     <React.StrictMode>
-      <HelloWorld />
+      <StyleProvider>
+        <ThemePicker variant="light">
+          <Blockcar />
+        </ThemePicker>
+      </StyleProvider>
     </React.StrictMode>
   );
 }
