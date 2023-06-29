@@ -61,7 +61,7 @@ a {
   mix-blend-mode: color-burn color-dodge;
   margin-top: 30px;
   margin-left: 80%;
-
+  width: 80px;
 }
 
 .pic{

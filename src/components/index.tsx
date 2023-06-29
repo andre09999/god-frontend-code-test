@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import arrow from '../../docs/chevron-small.svg'
 import circle from '../../docs/chevron-circled.svg'
-import { Block, Button } from 'vcc-ui';
+import { View, Button } from 'vcc-ui';
 
 
 export const Blockcar: React.FC = () => {
@@ -46,27 +46,28 @@ export const Blockcar: React.FC = () => {
     ))}
         </section>
     <div className="but">
-        <Block>
+        
+        <View  >
             <Button className="circle-invert" variant="outline" intent="secondary">
                 <Image 
-                className="images"
                 src={circle} 
-                alt="circle" 
-                width={30}
-                height={30}>
+                alt="cir2cle" 
+                width={20}
+                height={20}>
             </Image>
         </Button>
-    </Block>
-        <Block >
+    </View>
+        <View >
         <Button variant="outline" intent="secondary" >
                 <Image 
                 src={circle} 
                 alt="circle" 
-                width={30}
-                height={30}>
+                width={20}
+                height={20}>
             </Image>
         </Button>
-        </Block>
+        </View>
+
     </div>
   </main>
 };
