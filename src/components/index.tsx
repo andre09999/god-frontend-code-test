@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import data from  '../../public/api/cars.json'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -7,48 +7,96 @@ import circle from '../../docs/chevron-circled.svg'
 import { View, Button } from 'vcc-ui';
 
 
+
 export const Blockcar: React.FC = () => {
-    const [dates, setDates] = useState(data.slice(0,4))
+    const [dates, setDates] = useState(data); 
+    const [i, setI] = useState([0,1,2,3]); 
+    const [scr, setScr] = useState(false)
+    const tamanho = data.length;
+
+    useEffect(() => {
+       
+        if(window.screen.width < 800){
+            setI([0])
+            setScr(true)
+        }
+    },[])
+    const previous = () => {
+        const aa: number[] = []
+        i.map((a) => {
+            aa.push(a > 0 ? a - 1 : tamanho - 1 )
+        })
+        setI(aa)
+      };
+    
+      const next = () => {
+        const aa: number[] = []
+        i.map((a) => {
+            aa.push(a >= tamanho - 1 ? 0 : a + 1)
+        })
+        setI(aa)
+      };
+
+      const fillt = (a: string) => {
+        const c = data.filter((b) => b.bodyType.includes(a))
+        setDates(c)
+      }
+      const position = (aa: number) => {
+        setI([aa])
+      }
+
   return <main>
+    <header>
+        <input type="text" onChange={({target})=> fillt(target.value)} placeholder="type the bodyType "/>
+    </header>
     <section>
-    {dates.map((a)=> (
-        <div key={a.id} className="car">
-            <p className="p type">{a.bodyType}</p>
-            <h3>{a.modelName} <p className="p">{a.modelType}</p></h3>
-            <Image 
+       {
+i.map((a, i) => (
+    <div key={i}>
+        <p className="p type">{dates[a]?.bodyType}</p>
+        <h3>{dates[a]?.modelName} <p className="p">{dates[a]?.modelType}</p></h3>     
+        <Image 
                 className="pic"
-                src={a.imageUrl}
-                alt={a.id}
+                src={dates[a]?.imageUrl}
+                alt={dates[a]?.id}
                 width={300}
                 height={200}
         />
-        <div className="container-menu">
-          <div className="menus">
-            <Link href={`/learn/${a.id}`} target="_blank">LEARN</Link>
-            <Image 
-                src={arrow}
-                alt={a.id}
-                width={15}
-                height={15}
-            />
-          </div>
-          <div className="menus">
-            <Link href={`/shop/${a.id}`} target="_blank">SHOP</Link>
-            <Image 
-                src={arrow}
-                alt={a.id}
-                width={15}
-                height={15}
-            />
-          </div>
-        </div>
-        </div>
-    ))}
+        
+        {   dates[a]?.id ?
+               <div className="container-menu">
+
+               <div className="menus">
+                  <Link href={`/learn/${dates[a]?.id}`} target="_blank">LEARN</Link>
+                  <Image 
+                      src={arrow}
+                      alt={dates[a]?.id}
+                      width={15}
+                      height={15}
+                  />
+                </div>
+                <div className="menus">
+                  <Link href={`/shop/${dates[a]?.id}`} target="_blank">SHOP</Link>
+                  <Image 
+                      src={arrow}
+                      alt={dates[a]?.id}
+                      width={15}
+                      height={15}
+                  />
+                </div>  
+              </div>:
+              <></>
+        }
+    </div>
+))
+       }
         </section>
+        {
+            dates.length >= 5 ?
     <div className="but">
         
         <View  >
-            <Button className="circle-invert" variant="outline" intent="secondary">
+            <Button className="circle-invert" variant="outline" intent="secondary" onClick={()=> previous()}>
                 <Image 
                 src={circle} 
                 alt="cir2cle" 
@@ -58,7 +106,7 @@ export const Blockcar: React.FC = () => {
         </Button>
     </View>
         <View >
-        <Button variant="outline" intent="secondary" >
+        <Button variant="outline" intent="secondary" onClick={()=> next()}>
                 <Image 
                 src={circle} 
                 alt="circle" 
@@ -68,6 +116,21 @@ export const Blockcar: React.FC = () => {
         </Button>
         </View>
 
-    </div>
+    </div>:
+    <></>
+
+        }
+
+        {
+           scr ?
+            <ul>
+                {
+                    dates.map((a,i) => (
+                        <li key={a.id} onClick={()=> position(i)}></li>
+                    ))
+                }
+            </ul>:
+            <></>
+        }
   </main>
 };

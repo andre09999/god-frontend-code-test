@@ -2,6 +2,19 @@
   margin: 0;
   border: 0;
 }
+header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+}
+
+input[type=text]{
+  border:  1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+}
 
 body {
   color: rgb(0, 0, 0);
@@ -67,4 +80,27 @@ a {
 .pic{
   -webkit-box-shadow: 5px 5px 37px 17px #000000; 
   box-shadow: 5px 5px 37px 17px #000000;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .but{
+    display: none;
+  }
+  ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 25px;
+    cursor: pointer;
+    list-style-type: circle;
+    font-size: 40px;
+    
+  }
+  li:hover{
+    list-style-type: disc;
+    font-size:40px;
+    line-height:40px;
+  }
 }
