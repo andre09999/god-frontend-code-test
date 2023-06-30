@@ -9,10 +9,7 @@ header{
   flex-direction: column;
   gap: 15px;
   height: 150px;
-}
-
-header > di > img {
-  height: 20px !important;
+  padding: 30px;
 }
 
 input[type=text]{
@@ -75,12 +72,6 @@ h3{
   padding: 0 !important;
 }
 
-button[type=button]{
-  padding: 0;
-  width: 20px !important;
-  
-}
-
 .container-menu{
   display: flex;
   align-items: center;
@@ -106,7 +97,7 @@ a {
   gap: 20px;
   mix-blend-mode: color-burn color-dodge;
   margin-top: 30px;
-  margin-left: 70%;
+  margin-left: 80%;
 }
 
 .pic{

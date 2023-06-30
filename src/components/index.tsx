@@ -105,8 +105,8 @@ i.map((a, i) => (
                 className="circle-invert" 
                 src={circle} 
                 alt="circle" 
-                width={20}
-                height={20}>
+                width={40}
+                height={40}>
             </Image>
         </Button>
     </View>
@@ -115,8 +115,8 @@ i.map((a, i) => (
                 <Image 
                 src={circle} 
                 alt="circle" 
-                width={20}
-                height={20}>
+                width={40}
+                height={40}>
             </Image>
         </Button>
         </View>
