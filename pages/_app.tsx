@@ -7,7 +7,7 @@ function HomePage() {
   return (
     <React.StrictMode>
       <StyleProvider>
-        <ThemePicker variant="light">
+        <ThemePicker variant="dark" direction="ltr">
           <Blockcar />
         </ThemePicker>
       </StyleProvider>

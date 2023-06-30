@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import arrow from '../../docs/chevron-small.svg'
 import circle from '../../docs/chevron-circled.svg'
-import { View, Button } from 'vcc-ui';
+import { View, Button,Logo } from 'vcc-ui';
 
 
 
@@ -47,12 +47,16 @@ export const Blockcar: React.FC = () => {
 
   return <main>
     <header>
+
+    <Logo type="spreadmark" max-height={32} />
+
+        
         <input type="text" onChange={({target})=> fillt(target.value)} placeholder="type the bodyType "/>
     </header>
     <section>
        {
 i.map((a, i) => (
-    <div key={i}>
+    <div key={i} className="container-info">
         <p className="p type">{dates[a]?.bodyType}</p>
         <h3>{dates[a]?.modelName} <p className="p">{dates[a]?.modelType}</p></h3>     
         <Image 
@@ -95,18 +99,19 @@ i.map((a, i) => (
             dates.length >= 5 ?
     <div className="but">
         
-        <View  >
-            <Button className="circle-invert" variant="outline" intent="secondary" onClick={()=> previous()}>
+        <View  padding={20}>
+            <Button variant="text" intent="primary" onClick={()=> previous()}>
                 <Image 
+                className="circle-invert" 
                 src={circle} 
-                alt="cir2cle" 
+                alt="circle" 
                 width={20}
                 height={20}>
             </Image>
         </Button>
     </View>
         <View >
-        <Button variant="outline" intent="secondary" onClick={()=> next()}>
+        <Button variant="text" intent="primary" onClick={()=> next()}>
                 <Image 
                 src={circle} 
                 alt="circle" 
