@@ -7,20 +7,23 @@ header{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 15px;
   height: 150px;
   padding: 30px;
+  border-bottom: 1px solid white;
 }
 
 .inputsss{
   display: flex;
+  align-items: center;
   gap: 10px;
+  padding: 20px;
 }
 
 input[type=text]{
   border:  1px solid black;
   border-radius: 5px;
   text-align: center;
+  height: 35px;
   padding: 5px;
 }
 
@@ -31,7 +34,8 @@ body {
 section{
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  padding-top: 75px;
 }
 
 .container-info{
@@ -99,6 +103,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   mix-blend-mode: color-burn color-dodge;
   margin-top: 30px;
   margin-left: 80%;
@@ -108,6 +113,18 @@ a {
   -webkit-box-shadow: 5px 5px 37px 17px #080808; 
   box-shadow: 5px 5px 37px 17px #000000;
   border-radius: 15px;
+}
+footer{
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  padding: 15px;
+  border-top: 1px solid white;
+  text-align: center;
+}
+
+.none{
+  display: none;
 }
 
 @media only screen and (max-width: 768px) {
@@ -141,5 +158,32 @@ a {
   .i {
     height: 20px !important;
   }
-  
+  footer{
+    width: 95%;
+  }
+  .i{
+    display: flex;
+    align-items: center;
+  }
+  button[type=button]{
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  input[type=text]{
+    height: 25px;
+  }
+  .inputsss{
+    display: flex;
+    align-items: center;
+    height: 30px;
+  }
+  header{
+    padding: 0;
+  }
+
+  .footerTitle{
+    font-size: 16px;
+  }
 }
