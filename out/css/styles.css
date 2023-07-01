@@ -1,8 +1,14 @@
-*{
+* {
   margin: 0;
   border: 0;
 }
-header{
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,39 +18,36 @@ header{
   border-bottom: 1px solid white;
 }
 
-.inputsss{
+.inputsss {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 20px;
 }
 
-input[type=text]{
-  border:  1px solid black;
+input[type="text"] {
+  border: 1px solid black;
   border-radius: 5px;
   text-align: center;
   height: 35px;
   padding: 5px;
 }
 
-body {
-  background-color: #000000;
-  color: rgb(255, 255, 255);
-}
-section{
+section {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   padding-top: 75px;
 }
 
-.container-info{
+.container-info {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-h3{
+
+h3 {
   display: flex;
   align-items: baseline;
   gap: 10px;
@@ -52,36 +55,38 @@ h3{
   margin-bottom: 15px;
 }
 
-.p{
+.p {
   margin-bottom: 0;
   font-weight: lighter;
   color: gray;
 }
-.type{
+
+.type {
   margin-top: 20px;
 }
 
-.menus{
+.menus {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   cursor: pointer;
-  border: 1px solid  rgb(5, 176, 219);
+  border: 1px solid rgb(5, 176, 219);
   padding: 10px;
   border-radius: 10px;
   transition: 1s;
 }
-.menus:hover{
+
+.menus:hover {
   background-color: rgb(5, 176, 219);
 }
 
-.but > .i{
+.but > .i {
   width: 30px !important;
   padding: 0 !important;
 }
 
-.container-menu{
+.container-menu {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,11 +100,11 @@ a {
   color: rgb(45, 45, 209);
 }
 
-.circle-invert{
+.circle-invert {
   transform: scaleX(-1);
 }
 
-.but{
+.but {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,12 +114,12 @@ a {
   margin-left: 80%;
 }
 
-.pic{
-  -webkit-box-shadow: 5px 5px 37px 17px #080808; 
+.pic {
   box-shadow: 5px 5px 37px 17px #000000;
   border-radius: 15px;
 }
-footer{
+
+footer {
   bottom: 0;
   position: fixed;
   width: 100%;
@@ -123,23 +128,27 @@ footer{
   text-align: center;
 }
 
-.none{
+.none {
   display: none;
 }
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
-  body{
+  body {
     background-color: #000000;
   }
-  header{
+
+  header {
     display: flex;
     flex-direction: column;
+    padding: 0;
   }
-  .but{
+
+  .but {
     display: none;
   }
-  ul{
+
+  ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,42 +157,42 @@ footer{
     cursor: pointer;
     list-style-type: circle;
     font-size: 40px;
-    
   }
-  li:hover{
+
+  li:hover {
     list-style-type: disc;
-    font-size:40px;
-    line-height:40px;
+    font-size: 40px;
+    line-height: 40px;
   }
+
   .i {
     height: 20px !important;
-  }
-  footer{
-    width: 95%;
-  }
-  .i{
     display: flex;
     align-items: center;
   }
-  button[type=button]{
+
+  button[type="button"] {
     height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  input[type=text]{
+
+  input[type="text"] {
     height: 25px;
   }
-  .inputsss{
+
+  .inputsss {
     display: flex;
     align-items: center;
     height: 30px;
   }
-  header{
-    padding: 0;
+
+  footer {
+    width: 95%;
   }
 
-  .footerTitle{
+  .footerTitle {
     font-size: 16px;
   }
 }

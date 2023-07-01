@@ -14,9 +14,9 @@ export const Blockcar: React.FC = () => {
       context.setI([0]);
       context.setScr(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  /* eslint-disable react-hooks/exhaustive-deps */
   return (
     <main>
       <section>
@@ -67,7 +67,8 @@ export const Blockcar: React.FC = () => {
           </div>
         ))}
       </section>
-      {context.dates.length >= 5 ? <Setas /> : <></>}
+      { 
+        context.dates.length >= 5 ? <Setas /> : <></>}
 
       {context.scr ? <Bolinhas /> : <></>}
     </main>

@@ -8,7 +8,7 @@ export const Header: React.FC = () => {
 
   return (
     <header>
-      <Logo type="spreadmark" max-height={32} />
+      <Logo type="spreadmark" max-height={28} />
 
       <div className="inputsss">
         <input type="text" onChange={({ target }) => setText(target.value)} placeholder="type the bodyType" />
