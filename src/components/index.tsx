@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import arrow from '../../docs/chevron-small.svg'
 import circle from '../../docs/chevron-circled.svg'
-import { View, Button,Logo } from 'vcc-ui';
+import { View, Button,Logo, TextInput } from 'vcc-ui';
 
 
 
@@ -12,6 +12,7 @@ export const Blockcar: React.FC = () => {
     const [dates, setDates] = useState(data); 
     const [i, setI] = useState([0,1,2,3]); 
     const [scr, setScr] = useState(false)
+    const [tex, setText] = useState('')
     const tamanho = data.length;
 
     useEffect(() => {
@@ -38,6 +39,8 @@ export const Blockcar: React.FC = () => {
       };
 
       const fillt = (a: string) => {
+        console.log(a)
+        if(a === '') return setDates(data)
         const c = data.filter((b) => b.bodyType.includes(a))
         setDates(c)
       }
@@ -47,11 +50,15 @@ export const Blockcar: React.FC = () => {
 
   return <main>
     <header>
-
     <Logo type="spreadmark" max-height={32} />
 
-        
-        <input type="text" onChange={({target})=> fillt(target.value)} placeholder="type the bodyType "/>
+        <div className="inputsss">
+        <input type="text" onChange={({target})=> setText(target.value)} placeholder="type the bodyType "/>
+  
+            <Button variant="default" intent="secondary" onClick={()=> fillt(tex)}>
+                Submit
+        </Button>
+        </div>
     </header>
     <section>
        {
@@ -99,7 +106,7 @@ i.map((a, i) => (
             dates.length >= 5 ?
     <div className="but">
         
-        <View  padding={20}>
+        <View  >
             <Button variant="text" intent="primary" onClick={()=> previous()}>
                 <Image 
                 className="circle-invert" 

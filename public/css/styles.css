@@ -12,6 +12,11 @@ header{
   padding: 30px;
 }
 
+.inputsss{
+  display: flex;
+  gap: 10px;
+}
+
 input[type=text]{
   border:  1px solid black;
   border-radius: 5px;
@@ -68,7 +73,7 @@ h3{
 }
 
 .but > .i{
-  width: 20px !important;
+  width: 30px !important;
   padding: 0 !important;
 }
 
@@ -94,7 +99,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
   mix-blend-mode: color-burn color-dodge;
   margin-top: 30px;
   margin-left: 80%;
