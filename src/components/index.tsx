@@ -96,7 +96,8 @@ i.map((a, i) => (
                   />
                 </div>  
               </div>:
-              <></>
+              <h1>vehicle not found
+              </h1>
         }
     </div>
 ))
