@@ -8,6 +8,7 @@ export default function Myrovider({children}: any): JSX.Element {
     const [scr, setScr] = useState(false)
     const tamanho = data.length;
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const previous = () => {
         const aa: number[] = []
         i.map((a) => {
@@ -16,6 +17,7 @@ export default function Myrovider({children}: any): JSX.Element {
         setI(aa)
       };
     
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       const next = () => {
         const aa: number[] = []
         i.map((a) => {
@@ -24,12 +26,14 @@ export default function Myrovider({children}: any): JSX.Element {
         setI(aa)
       };
 
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       const fillt = (a: string) => {
         console.log(a)
         if(a === '') return setDates(data)
         const c = data.filter((b) => b.bodyType.includes(a))
         setDates(c)
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       const position = (aa: number) => {
         setI([aa])
       }

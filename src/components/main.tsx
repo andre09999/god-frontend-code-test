@@ -1,4 +1,5 @@
-import React, { useState, useEffect,useContext } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect,useContext } from "react";
 import Image from 'next/image'
 import Link from 'next/link'
 import arrow from '../../docs/chevron-small.svg'
