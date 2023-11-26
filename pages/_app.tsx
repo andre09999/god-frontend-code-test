@@ -12,7 +12,8 @@ function HomePage() {
       <StyleProvider>
         <ThemePicker variant="dark" direction="ltr">
           <Header/>
-          <Blockcar />
+            <Blockcar />
+            
           <Footer/>
         </ThemePicker>
       </StyleProvider>
