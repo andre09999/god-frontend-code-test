@@ -1,9 +1,9 @@
 import React from "react";
 import Link from 'next/link';
 
-export const Footer: React.FC = () => {
+const Footer: React.FC = ({ check }: any) => {
   return (
-    <footer>
+    <footer className={`${check ? 'dark' : 'light'} border${check ? 'd' : 'l'}`}>
       <h1 className="footerTitle">
         Criado e desenvolvido por &copy;{" "}
         <Link href="https://www.linkedin.com/in/dev-andre-front-end/" target="_blank" rel="noreferrer">
@@ -13,3 +13,5 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
+
+export default Footer;

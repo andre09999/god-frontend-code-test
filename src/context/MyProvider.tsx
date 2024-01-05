@@ -1,4 +1,4 @@
-import React, { useState, useMemo,useCallback  } from 'react';
+import React, { useState, useCallback } from 'react';
 import data from '../../public/api/cars.json';
 import MyContext from './MyContext';
 
@@ -9,27 +9,28 @@ export default function MyProvider({ children }: any): JSX.Element {
   const tamanho = data.length;
 
   const previous = useCallback(() => {
-    const aa: number[] = [];
-    i.map((a) => {
-      aa.push(a > 0 ? a - 1 : tamanho - 1);
-    });
-    setI(aa);
+    setI(i.map((a) => (a > 0 ? a - 1 : tamanho - 1)));
   }, [i, tamanho]);
 
-  const fillt = useCallback((a: string) => {
-    if (a === '') return setDates(data);
-    const c = data.filter((b) => b.bodyType.includes(a));
-    setDates(c);
+  const filterCars = useCallback((filterString: string) => {
+    if (!filterString) {
+      setDates(data);
+      return;
+    }
+
+    const filteredCars = data.filter((car) => car.bodyType.includes(filterString));
+    setDates(filteredCars);
   }, []);
-  
-  const position = useCallback((aa: number) => {
-    setI([aa]);
+
+  const position = useCallback((index: number) => {
+    setI([index]);
   }, []);
+
   const next = useCallback(() => {
     setI(i.map((a) => (a >= tamanho - 1 ? 0 : a + 1)));
   }, [i, tamanho]);
-  
-  const contextValue = useMemo(() => ({
+
+  const contextValue = {
     dates,
     setDates,
     i,
@@ -39,12 +40,10 @@ export default function MyProvider({ children }: any): JSX.Element {
     tamanho,
     previous,
     next,
-    fillt,
-    position,
-  }), [dates, i, scr, tamanho, previous, next, fillt, position]);
-  
-  
-  
+    filterCars,
+    position
+  };
+
   return (
     <MyContext.Provider value={contextValue}>
       <div>{children}</div>

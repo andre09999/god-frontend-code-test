@@ -1,32 +1,42 @@
-* {
-  margin: 0;
-  border: 0;
+main{
+  height: 81vh;
 }
-
-body {
-  background-color: #000000;
+.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+.dark{
+  background-color: #020202;
   color: #ffffff;
 }
+.borderdark{
+  border-bottom: 1px solid rgb(255, 255, 255) !important;
+}
+.borderlight{
+  border-bottom: 1px solid rgb(0, 0, 0) !important;
+}
+.borderd{
+  border-top: 1px solid rgb(255, 255, 255);
+}
+.borderl{
+  border-top: 1px solid rgb(0, 0, 0);
 
+}
 header {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 150px;
-  padding: 30px;
-  border-bottom: 1px solid white;
 }
 
 .inputsss {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 20px;
 }
 
 input[type="text"] {
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
   text-align: center;
   height: 35px;
@@ -37,7 +47,6 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding-top: 75px;
 }
 
 .container-info {
@@ -52,7 +61,6 @@ h3 {
   align-items: baseline;
   gap: 10px;
   margin-top: 0;
-  margin-bottom: 15px;
 }
 
 .p {
@@ -115,7 +123,6 @@ a {
 }
 
 .pic {
-  box-shadow: 5px 5px 37px 17px #000000;
   border-radius: 15px;
 }
 
@@ -124,7 +131,6 @@ footer {
   position: fixed;
   width: 100%;
   padding: 15px;
-  border-top: 1px solid white;
   text-align: center;
 }
 
